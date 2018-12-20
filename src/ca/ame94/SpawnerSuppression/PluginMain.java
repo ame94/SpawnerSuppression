@@ -1,6 +1,9 @@
 package ca.ame94.SpawnerSuppression;
 
+import ca.ame94.SpawnerSuppression.listeners.SpawnerBlock;
+import ca.ame94.SpawnerSuppression.util.Config;
 import ca.ame94.SpawnerSuppression.util.Logger;
+import ca.ame94.SpawnerSuppression.util.PluginMgr;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +21,11 @@ public class PluginMain extends JavaPlugin {
         // The very first point of execution happens here.
         // Use a logging class to echo to the console that the plugin is starting up.
         Logger.Info("Starting up...");
+        PluginMgr.Init(this);
+        Config.Init();
+
+        // Register our spawner event
+        PluginMgr.RegisterEvent(new SpawnerBlock());
     }
 
     @Override
