@@ -1,0 +1,11 @@
+name: SpawnerSuppression
+version: 1
+description: Limit entity spawn rate caused from spawner blocks
+author: ame94
+main: ca.ame94.SpawnerSuppression.PluginMain
+
+commands:
+    spawnersuppression:
+        description: Modify plugin settings
+        permission: spawnersuppression.admin
+        permission-message: §4You are not permitted to use this plugin.
